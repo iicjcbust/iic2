@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 55px 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.main-heading{
+  margin-bottom: 30px;
+}
+
+.main-heading h2 {
+  color: Blue;
+  font-size: 42px;
+  font-family: 'Crimson Pro', serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.developer-element {
+  padding: 20px;
+  margin: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.developer-img img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  background-color: black;
+}
+
+.developer-name {
+  text-transform: uppercase;
+  font-size: 24px;
+  margin: 15px;
+  margin-bottom: 0;
+  font-family: 'Crimson Pro', serif;
+  font-weight: bolder;
+}
+
+.developer-profession {
+  color: rgb(103, 103, 221);
+  font-size: 18px;
+  margin: 10px;
+  font-weight: 600;
+}
+
+.developer-intro {
+  font-style: italic;
+}
+
+@media screen and (max-width:1000px) {
+  .developers {
+      flex-direction: column;
+  }
+}
+
+.fa {
+  padding: 10px 5px;
+  font-size: 24px !important;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: black;
+  border-radius: 5px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+.fa,.fa-facebook,.fa-linkedin,.fa-instagram,.fa-github{
+  background: transparent;
+  color: black;
+}
+
+.developer-social-icons{
+  /* padding: 10px; */
+  margin: 10px;
+}

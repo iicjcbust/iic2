@@ -1,0 +1,67 @@
+.expert-image img{
+    width: 225px;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid grey;
+}
+.expert-item{
+    width: 46%;
+    display: flex;
+    margin: 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+.teamContainer,.expertContainer,.membersContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto !important; 
+    width: 80%;
+
+}
+.expert-image{
+    padding: 5px 10px;
+}
+.expert-name{
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+}
+.expert-content{
+    margin: 10px;
+}
+.bi{
+    margin: 5px;
+    font-size: 16px;
+    color: rgb(92, 92, 92) !important;
+}
+.icons{
+    display: flex;
+}
+@media only screen and (max-width:1250px){
+    .teamContainer,.expertContainer{
+        width:90%;
+    }
+}
+@media only screen and (max-width:1120px){
+    .teamContainer,.expertContainer{
+        width:100%;
+    }
+}
+@media only screen and (max-width:700px){
+    .expert-item{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:550px){
+    .expert-item{
+        width: 80%;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width:300px){
+    .expert-image img{
+        width: 100%;
+    }
+}

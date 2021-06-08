@@ -1,0 +1,92 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Achievements{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/download.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+<header class="bg-secondary text-center py-5 mb-4">
+  <div class="container">
+    <h1 class="font-weight-light text-white">Our Achievements</h1>
+  </div>
+</header>
+<div style="padding: 3%;">
+  
+  <div class="row">
+    {% for event in annou %}
+  <div class="col-xl-4 col-md-6 mb-4" >
+      <div class="card border-0 shadow" >
+        <img src="/media/{{event.image}}" style="height: 420px; width:400px;" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">{{event.title}}</h5>
+          <div class="card-text text-black-50">{{event.undertitle}}</div>
+          <p>{{event.body}}</p>
+      </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+<!-- <header class="bg-secondary text-center py-5 mb-4">
+    <div class="container">
+      <h1 class="font-weight-light text-white">Our Achievements</h1>
+    </div>
+  </header>
+  <div style="padding: 3%;">
+  <div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="/static/images/img/1-slider.jpg" style="height: 260px;" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Name of Achievements</h5>
+            <div class="card-text text-black-50">From where</div>
+            <p>About</p>
+        </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+            <img src="/static/images/img/1-slider.jpg" style="height: 260px;" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Name of Achievements</h5>
+              <div class="card-text text-black-50">From where</div>
+              <p>About</p>
+          
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+            <img src="/static/images/img/1-slider.jpg" style="height: 260px;" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Name of Achievements</h5>
+              <div class="card-text text-black-50">From where</div>
+              <p>About</p>
+          
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+            <img src="/static/images/img/1-slider.jpg" style="height: 260px;" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Name of Achievements</h5>
+              <div class="card-text text-black-50">From where</div>
+              <p>About</p>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</div> -->
+{% endblock body %}
+
+{% block script %}
+   
+{% endblock script %}

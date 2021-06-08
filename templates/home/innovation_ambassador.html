@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Student Core Team{% endblock title %}
+{% load static %}
+{% block css %}
+<!--<link rel="stylesheet" href="{% static 'css/Experts.css' %}"> -->
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+
+<h1 class="text-center heading"> Innovation Ambassador</h1>
+<div class="card-container">
+  <div class="card card-element">
+    <img src="{% static 'images/img/sapna_mam.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dr. Sapna Gambhir</h5>
+      <p class="card-text"> Contact Number: +91 9810340200</p>
+      <a href="https://jcboseust.ac.in/content/faculty_details/MTk=" target="_blank" class="btn btn-primary">Know More</a>
+    </div>
+  </div>
+  <div class="card card-element">
+    <img src="{% static 'images/img/parul_mam.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dr. Parul Tomar</h5>
+      <p class="card-text">Contact Number: +91 9818923336</strong></p>
+      <a href="https://jcboseust.ac.in/content/faculty_details/NDU=" target="_blank" class="btn btn-primary">Know More</a>
+    </div>
+  </div>
+  <div class="card card-element">
+    <img src="{% static 'images/img/sonali_gupta_mam.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dr. Sonali Gupta</h5>
+      <p class="card-text">Contact Number: +91 9999971057</p>
+      <a href="https://jcboseust.ac.in/content/faculty_details/MTQ4" target="_blank" class="btn btn-primary">Know More</a>
+    </div>
+  </div>
+</div>
+  
+{% endblock body %}
+
+{% block script %}
+  <!--  <script src="{% static 'js/iicStudent.js' %}"></script> -->
+{% endblock script %}

@@ -1,0 +1,211 @@
+{% extends 'home/base.html' %}
+
+{% block title %} About Us{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/Experts.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+<hr>
+<h2 style="margin-left: 5%">About Us</h2><hr>
+<div class="about-section">
+  <div class="about-section-left">
+    <p>
+      Ministry of Education (MoE), Govt. of India has established ‘MoE’s
+      Innovation Cell (MIC)’ to systematically foster the culture of
+      Innovation amongst all Higher Education Institutions (HEIs). The
+      primary mandate of MIC is to encourage, inspire and nurture young
+      students by supporting them to work with new ideas and transform them
+      into prototypes while they are informative years. MIC has envisioned
+      encouraging creation of ‘Institution’s Innovation Council (IICs)’
+      across selected HEIs. A network of these IICs will be established to
+      promote innovation in the Institution through multitudinous modes
+      leading to an innovation promotion eco-system in the campuses.
+    </p>
+  </div>
+  <div class="about-section-right">
+    <img
+      id="about-section-img"
+      src="{% static 'images/img/university.jpg' %}"
+      alt="IIC Image"
+    />
+  </div>
+</div>
+<hr>
+<h5 style="margin-left: 5%; font-weight: bold;">Major Focus</h5>
+<div style="margin-left: 10%; list-style: circle;">
+  <li>• To create a vibrant local innovation ecosystem.</li>
+  <li>• Start-up supporting mechanism in HEIs.</li>
+  <li>• Prepare institute for Atal Ranking of institutions on innovation achievements framework.</li>
+  <li>• Establish function ecosystem for scouting ideas and pre-incubation of ideas.</li>
+  <li>• Develop better cognitive ability among students.</li>
+</div>
+<hr>
+<h5 style="margin-left: 5%; font-weight: bold;">Function of IIC</h5>
+<div style="margin-left: 10%; list-style: circle;">
+  <li>• To conduct various Innovation, IPR and entrepreneurship-related activities prescribed by  MIC in time bound fashion.</li>
+  <li>• Identify and reward innovations and share success stories.</li>
+  <li>• Organize periodic workshops/ seminars/ interactions with entrepreneurs, investors, professionals and create a mentor pool for student innovators.</li>
+  <li>• Network with peers and national entrepreneurship development organizations.</li>
+  <li>• Create an Institution’s Innovation portal to highlight innovative projects carried out by institution’s faculty and students.</li>
+  <li>• Organize Hackathons, idea competition, mini-challenges etc. with the involvement of industries.</li>
+</div>
+<hr>
+<h4 style="margin-left: 5%">Cells at IIC-JCBUST</h4>
+<div style="margin-left: 10%; margin-right: 10%">
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne"
+          aria-expanded="false"
+          aria-controls="flush-collapseOne"
+        >
+          IPR Cells
+        </button>
+      </h2>
+      <div
+        id="flush-collapseOne"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <div class="accordion-body">
+          • Patent expert could be any registered patent agent/lawyer or the subject matter expert/faculty who have sufficient years of experience in the IPR domain.<br>
+          • He/ She would suggest points related to patent and technology transfer in the council meeting.<br>
+          • He/ She would also play a key role in the IPR workshops scheduled in the IIC calendar with in that institute.
+          
+          
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo"
+          aria-expanded="false"
+          aria-controls="flush-collapseTwo"
+        >
+          StartUp Cell
+        </button>
+      </h2>
+      <div
+        id="flush-collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingTwo"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <div class="accordion-body">
+          Alumni network of any institution is the most valuable resource of any Institution. The role of alumni entrepreneur is to <br>guide not only the council in the matters of startup ecosystem but to also guide the students of the institution. He/ She can <br>share his success story as an entrepreneur/innovator.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingThree">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseThree"
+          aria-expanded="false"
+          aria-controls="flush-collapseThree"
+        >
+          Innovation Cell
+        </button>
+      </h2>
+      <div
+        id="flush-collapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingThree"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <div class="accordion-body">
+          • He/ She will attend the council meeting on regular basis (quarterly).<br>
+
+• Technical Expert would play the role of mentor/guide to the institute students.<br>
+
+• He/ She will help in organizing institute level idea Competition/Hackathon by suggesting suitable problem statements or theme.<br>
+
+• He/ She will give his inputs in council meetings about the latest trends in technologies and feasibility of the idea/point discussed.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingFour">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFour"
+        aria-expanded="false"
+        aria-controls="flush-collapseFour"
+      >
+        Incubation Cell
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFour"
+      class="accordion-collapse collapse"
+      aria-labelledby="flush-headingFour"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div class="accordion-body">
+        • He/ She will attend the general council meeting on regular basis (quarterly).<br>
+
+        • He/ She will help the IIC in conducting idea workshops/ competition/ Hackathon/ bootcamps etc.<br>
+        
+        • He/ She will also help the IIC in identifying ideas from IIC events and provide mentoring, incubation guidance and business network support.  
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div>
+  <br>
+  <h1 class="text-center heading"> Innovation Ambassador</h1>
+<div class="card-container">
+<div class="card card-element">
+  <img src="{% static 'images/img/sapna_mam.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Dr. Sapna Gambhir</h5>
+    <p class="card-text"> Contact Number: +91 9810340200</p>
+    <a href="https://jcboseust.ac.in/content/faculty_details/MTk=" target="_blank" class="btn btn-primary">Know More</a>
+  </div>
+</div>
+<div class="card card-element">
+  <img src="{% static 'images/img/parul_mam.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Dr. Parul Tomar</h5>
+    <p class="card-text">Contact Number: +91 9818923336</strong></p>
+    <a href="https://jcboseust.ac.in/content/faculty_details/NDU=" target="_blank" class="btn btn-primary">Know More</a>
+  </div>
+</div>
+<div class="card card-element">
+  <img src="{% static 'images/img/sonali_gupta_mam.jpeg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Dr. Sonali Gupta</h5>
+    <p class="card-text">Contact Number: +91 9999971057</p>
+    <a href="https://jcboseust.ac.in/content/faculty_details/MTQ4" target="_blank" class="btn btn-primary">Know More</a>
+  </div>
+</div>
+</div>
+
+</div>
+   
+  
+{% endblock body %}
+
+{% block script %}
+   
+{% endblock script %}

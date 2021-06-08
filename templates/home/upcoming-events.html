@@ -1,0 +1,53 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Upcoming Events{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/upcoming.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+
+<div class="title">
+    <div class="hero">
+        <h1>EVENTS</h1>
+    </div>
+</div>
+
+{% for event in events %}
+<div class="{% cycle 'blog-card' 'blog-card alt' %}">
+    <div class="meta">
+        <div class="photo" style="background-image: url( /media/{{event.image}} )"></div>
+        <ul class="details" style="list-style: none;">
+            <div class="register">
+                <span class="simple"> <a href="{{event.googleFormLink}}" target="_blank">Register </a> </span>
+                <li class="date">{{event.dateEvent}}</li>
+            </div>
+
+        </ul>
+    </div>
+    <div class="description">
+        <h1>{{event.title}}</h1>
+        <h2>{{event.dateEvent}} - {{event.startTime}} - {{event.endTime}}</h2>
+        
+        <p>{{event.content |safe | truncatechars:150}}</p>
+        <p>Speaker : {{event.speakerName}}</p>
+        <p>{{event.cell}}</p>
+            <form action="/eventDesc/{{event.title}}" method="post"  class="read-more">
+                {% csrf_token %}
+                <input type="button" value="Read More">
+            </form>
+    
+    </div>
+</div>
+{% endfor %}
+
+</div>
+{% endblock body %}
+
+{% block script %}
+
+{% endblock script %}
