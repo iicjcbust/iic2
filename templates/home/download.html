@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Download{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/download.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+<hr>
+<h1 style="padding:4% 2%;text-align: center;">Welcome to Downloads</h1>
+<!-- <hr> -->
+<div style="margin: 0 4%;">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Serial No.</th>
+        <th scope="col">Document Name</th>
+        <th scope="col">Download Link</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in down %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{item.name}}</td>
+        <td>
+           <a type="button" class="btn btn-outline-warning" style="text-decoration: none;" href="{{item.link}}"> Download</a>
+        </td>
+      </tr>
+
+    </tbody>
+    {% endfor %}
+  </table>
+  
+</div>  
+  
+{% endblock body %}
+
+{% block script %}
+   
+{% endblock script %}

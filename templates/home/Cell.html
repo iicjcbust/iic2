@@ -1,0 +1,123 @@
+{% extends 'home/base.html' %}
+
+{% block title %} {{name}} Cell{% endblock title %}
+{% load static %}
+{% block css %}
+
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+
+    <h1 style="padding:4% 2%;text-align: center;">Welcome to <span class="title-color">
+    <span class="text-slider"></span> 
+   </span></h1>
+  <div class="about-section">
+
+    <div class="about-section-left">
+      <p>{{content}}</p>
+    </div>
+    <div class="about-section-right">
+      <img id="about-section-img" src="{% static 'images/img/university.jpg' %}" alt="IIC Image">
+    </div>
+  </div>
+  <hr>
+ 
+
+ <!--Faculty ordinator Starts-->
+   <h1 style="text-align: center;">{{name}} Faculty Cordinator</h1>
+
+   <div style="display: flex;justify-content: space-around; flex-wrap: wrap;">
+    {% for cord  in  cellCord %}
+    <div class="card" style="width: 18rem;margin:2%; text-align: center;">
+      <img src="/media/{{cord.image}}" class="card-img-top" alt="..." style="width:286px;height:320px;">
+      <div class="card-body">
+        <h5 class="card-title">{{cord.name}}</h5>
+  
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <hr>
+
+<!--Member Cordinator Starts-->
+
+    <h1 style="text-align: center;">{{name}} Member Cordinator</h1>
+  
+    <div style="display: flex;justify-content: space-around; flex-wrap: wrap;  text-align: center;" class="p-3 m-2">
+      {% for member in cellMember %}
+      <div class="card card-width border-0">
+          <div class="card-body p-0 card-border">
+            <img src="/media/{{member.image}}" style="height:400px; width:100%;" class="card-img-top" alt="...">
+            <div class="p-4">
+                <h5 class="card-title">{{member.name}}</h5>
+            </div>
+        </div>
+      </div>
+  {% endfor %}
+      </div>
+
+  <hr>
+
+<!--Events Panel Starts-->
+
+  <h1 class="text-center">Events</h1>
+  <div style="margin: 0 4%;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Serial No.</th>
+          <th scope="col">Event Name</th>
+          <th scope="col">Event Date-Time</th>
+          <th scope="col">Description</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in events %}
+        
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{event.title}}</td>
+          <td>{{event.dateEvent|date:"M m"}}, {{event.startTime|time:"G:i A"}} -
+            {{event.endTime|time:"G:i A"}}</td>
+          <td> 
+            <form action="/eventDesc/{{event.title}}" method="post">
+              {% csrf_token %}
+              <button class="btn btn-outline-warning">Read More</button>
+            </form>
+            </td>
+          
+        </tr>
+        {% empty %}
+        <tr >
+            <td colspan="4" style="text-align: center;">
+                No Records Found
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
+  </div>
+  <hr>
+  
+  
+{% endblock body %}
+
+{% block script %}
+<script src="{% static 'js/typed.js-master/lib/typed.min.js' %} "> </script>     
+<script> 
+    let cellName = "{{name}}" + " Cell"
+      var typed = new Typed(".text-slider", { 
+          strings: [ cellName ], 
+          typeSpeed: 50, 
+          loop: true, 
+          backDelay: 900, 
+          backSpeed: 30, 
+      }); 
+  
+</script> 
+{% endblock script %}

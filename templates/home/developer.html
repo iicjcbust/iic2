@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Developer Team{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/developer.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Noto+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="container">
+    <div class="main-heading">
+        <h2>Developer Team</h2>
+        <p><em>"None of us is as smart as all of us"</em></p>
+    </div>
+
+    <div class="developers">
+
+        {% for developer in developers %}
+        <div class="developer-element">
+            <div class="developer-img">
+                <img src="/media/{{developer.image}}" alt="">
+            </div>
+            <div class="developer-name">{{developer.name}}</div>
+            <div class="developer-profession">{{developer.profession}}</div>
+            
+            <div class="developer-social-icons">
+                <a href="https://www.facebook.com/{{developer.facebook_ID}}/" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://www.linkedin.com/in/{{developer.linkdin_ID}}/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/{{developer.instagram_ID}}/" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.github.com/{{developer.github_ID}}/" target="_blank" class="fa fa-github"></a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+{% endblock body %}
+
+{% block script %}
+
+{% endblock script %}

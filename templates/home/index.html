@@ -1,0 +1,230 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Home {% endblock title %}
+{% load static %}
+{% block css %}
+
+<style>
+  .blink {
+    animation: blinker 0.6s linear infinite;
+    color: red;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .btn-outline-secondary:focus {
+    outline: none;
+    box-shadow: none;
+  }
+</style>
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock css %}
+
+
+{% block body %}
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    {% for slide in slider %}
+    {% if slider|length > 1 %}
+    {% if forloop.first %}
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    {% else %}
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{forloop.counter0}}"
+      aria-label="Slide {{forloop.counter}}"></button>
+    {% endif %}
+
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="carousel-inner">
+    {% for slide in slider %}
+    {% if forloop.first %}
+    <div class="carousel-item active">
+      <img src="/media/{{slide.image}}" class="d-block w-100" alt="...">
+    </div>
+    {% else %}
+    <div class="carousel-item">
+      <img src="/media/{{slide.image}}" class="d-block w-100" alt="...">
+    </div>
+    {% endif %}
+
+    {% empty %}
+    <div class="carousel-item active">
+      <img src="{% static 'images/img/homeslider-9.jpeg' %}" class="d-block w-100" alt="...">
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if slider|length > 1 %}
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  {% endif %}
+</div>
+<h1 class="text-center m-4 title-heading">Welcome to <span class="title-color">Institution's Innovation Council</span></h1>
+<div class="cell-container">
+  <div class="cell-container-element1">
+    <div class="cell-buttons">
+      <!-- <a href="startupCell" target="_blank" class="btn btn-outline-success" role="button">Startup</a>
+      <a href="innovationCell" target="_blank" class="btn btn-outline-success" role="button">Innovation</a>
+      <a href="incubationCell" target="_blank" class="btn btn-outline-primary" role="button">Incubation</a>
+      <a href="iprCell" target="_blank" class="btn btn-outline-primary" role="button">IPR</a> -->
+      <a href="https://drive.google.com/file/d/17bKVbRCVHCWZobWwySry2IjaqENLQLKl/view?usp=sharing" target="_blank"
+        class="btn btn-warning" role="button">IIC Constitution</a>
+      <a href="https://drive.google.com/file/d/1-L1wHNWUX-CJNX0sB7cP5cr8BZl8gttK/view?usp=sharing" target="_blank"
+        class="btn btn-warning" role="button">IIC Activity Calender</a>
+
+      <a href="/ExternalExperts" target="_blank" class="btn btn-warning" role="button">External Experts</a>
+      <a href="/iicFaculty" target="_blank" class="btn btn-warning" role="button">Faculty Coordinators</a>
+      <a href="/innovation_ambassador" target="_blank" class="btn btn-warning" role="button">Innovation Ambassador</a>
+
+    </div>
+  </div>
+
+
+  <div class="cell-container-element">
+    <div class="about-section">
+
+      <div class="about-section-left">
+        <br>
+        <p>Ministry of Education (MoE), Govt. of India has established ‘MoE’s Innovation Cell (MIC)’ to systematically
+          foster the culture of Innovation amongst all Higher Education Institutions (HEIs). The primary mandate of MIC
+          is to encourage, inspire and nurture young students by supporting them to work with new ideas and transform
+          them into prototypes while they are informative years.
+        </p>
+        <p>MIC has envisioned encouraging creation of ‘Institution’s Innovation Council (IICs)’ across selected HEIs. A
+          network of these IICs will be established to promote innovation in the Institution through multitudinous modes
+          leading to an innovation promotion eco-system in the campuses.
+        </p>
+      </div>
+      <div class="about-section-right">
+        <!-- <img id="about-section-img" src="{% static 'images/img/university.jpg' %}" alt="IIC Image"> -->
+        <div class="notice-left">
+          <h2>Announcements</h2>
+          <div>
+            <ul>
+              <marquee behavior="strip" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();"
+                direction="up" direction="up" scrolldelay="400" style="height: 259px;">
+                {% for notice in announcement %}
+
+                <li><a class="notice-link" {% if notice.EventLink is not None %} href="{{notice.EventLink}}" {% else %}
+                    href="/media/{{notice.fileUpload}}" {% endif %} target="_blank">{{notice.title}}</a>
+                  {% if notice.isLatest %}
+                  <span class="blink">new</span>
+                  {% endif %}
+                </li>
+
+                {% endfor %}
+              </marquee>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <hr>
+    <div class="notice-section">
+      <div class="notice-left-1" style="height: auto;">
+
+        <div>
+          <h3 style="font-weight: bold;">Major Focus at IIC</h3>
+          <br>
+
+          <div class="notice">
+            <ul>
+              <li>To create a vibrant local innovation ecosystem.</li>
+              <li>Start-up supporting Mechanism in HEIs.</li>
+              <li>Prepare institute for Atal Ranking of Institutions on Innovation Achievements Framework.</li>
+              <li>Establish a Function Ecosystem for Scouting Ideas and Pre-incubation of Ideas.</li>
+              <li>Develop better Cognitive Ability for Technology Students.</li>
+            </ul>
+          </div>
+
+        </div>
+
+
+        <div>
+          <h3 style="font-weight: bold;">Functions of IICs</h3>
+          <br>
+
+          <div class="notice">
+            <ul>
+              <li> To conduct various innovation and entrepreneurship-related activities prescribed by Central MIC in
+                time bound fashion.</li>
+              <li> Identify and reward innovations and share success stories.</li>
+              <li> Organize periodic workshops/ seminars/ interactions with entrepreneurs, investors, professionals and
+                create a mentor pool for student innovators.</li>
+              <li> Network with peers and national entrepreneurship development organizations.</li>
+              <li> Highlight innovative projects carried out by the institution's faculty and students.</li>
+              <li> Organize Hackathons, idea competition, mini-challenges etc. with the involvement of industries.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!--PERCENTAGE BAR-->
+      {% comment %} <section class="circle-chart-container">
+        <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg">
+          <circle stroke="#efefef" stroke-width=".5" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+          <circle class="circle-chart-circle" stroke="#64b2d1" stroke-width="3" stroke-dasharray="54,100" fill="none"
+            cx="16.91549431" cy="16.91549431" r="15.91549431" />
+        </svg>
+        <span class="circle-chart-percentage circle-chart-one-percentage">
+          29.1%
+        </span>
+        <svg class="circle-chart circle-chart-two" viewbox="0 0 33.83098862 33.83098862"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle stroke="#efefef" stroke-width="0" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+          <circle class="circle-chart-circle" stroke="#5292ac" stroke-width="3" stroke-dasharray="29,100" fill="none"
+            cx="16.91549431" cy="16.91549431" r="15.91549431" />
+        </svg>
+        <span class="circle-chart-percentage circle-chart-two-percentage">
+          54.9%
+        </span>
+      </section> {% endcomment %}
+
+    </div>
+    <hr>
+
+  </div>
+  <div class="cell-container-element1">
+    <div class="cell-buttons">
+
+      <a href="https://www.facebook.com/pages/category/Entrepreneur/Institutions-Innovation-Council-of-jcbose-UST-YMCA-Faridabad-755102508178450/"
+        target="_blank"> <i class="bi bi-facebook"></i></a>
+
+      <a href="https://www.instagram.com/institute_innovation__council/" target="_blank"><i
+          class="bi bi-instagram"></i></a>
+      <a href="https://twitter.com/jcboseust?lang=en" target="_blank"><i class="bi bi-twitter"></i></a>
+      <a href="https://www.youtube.com/channel/UCv95ir_eblihaZMzMksq7VA" target="_blank"><i
+          class="bi bi-youtube"></i></a>
+      <a href="https://www.linkedin.com/company/institution-s-innovation-council-jc-bose-ust" target="_blank"><i
+          class="bi bi-linkedin"></i></a>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock body %}
+
+{% block script %}
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock script %}

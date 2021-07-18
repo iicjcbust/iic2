@@ -1,0 +1,45 @@
+{% extends 'home/base.html' %}
+
+{% block title %} External Experts{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/Experts.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+
+<header class="bg-secondary text-center py-5 mb-4">
+  <div class="container">
+    <h1 class="font-weight-light text-white">Meet Our External Experts</h1>
+  </div>
+</header>
+
+<div class="my-4">
+  <div class="expertContainer">
+<!-- New Changes -->
+{% for item in experts %} 
+<div class="expert-item">
+      <div class="expert-image">
+        <img src="/media/{{item.image}}" alt="">
+      </div>
+      <div class="expert-content">
+        <div class="expert-name">{{item.name}}</div>
+        <div>
+        <h6 class=" grey-text mb-3">{{item.designation}}</h6>
+          
+          <div class="icons"><span><i class="bi bi-envelope-fill"></i></span><span>{{item.email}}</span></div>
+          <div class="icons"><span><i class="bi bi-telephone-fill"></i></span><span>{{item.phone}}</span></div>
+          <div>{{item.role}}</div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+
+
+  </div>
+</div>
+
+{% endblock body %}

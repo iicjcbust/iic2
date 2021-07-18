@@ -1,0 +1,64 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Student Core Team{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/Experts.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+<header class="bg-secondary text-center py-5 mb-4">
+    <div class="container">
+      <h1 class="font-weight-light text-white">Meet Our Student Core Team</h1>
+    </div>
+</header>
+
+ <div style="padding: 6%;">
+
+    <h1 style="text-align: center;">IIC Secratary</h1>
+    <div class="row" style="padding: 3%;">
+    {% for i in secratary %}
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow"style="height: 360px;" >
+        <img src="/media/{{i.image}}" style="height: 280px;" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">{{i.name}}</h5>
+          <div class="card-text text-black-50">{{i.designation|default:""}}</div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+    <hr>
+
+    
+    {% for cell in cordinators %}
+    {% for i in cell %}
+    {% if forloop.first %}
+     <h1 style="text-align: center;">{{i.role}}</h1>
+    <div class="row" style="padding: 3%;">
+    {% endif %}
+   <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-0 shadow"style="height: 360px;" >
+      <img src="/media/{{i.image}}" style="height: 280px;" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title mb-0">{{i.name}}</h5>
+        <div class="card-text text-black-50">{{i.designation|default:""}}</div>
+      </div>
+    </div>
+  </div>
+  {% if forloop.last %}
+    </div>
+  <hr>
+  {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}

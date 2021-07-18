@@ -1,0 +1,74 @@
+{% extends 'home/base.html' %}
+
+{% block title %} {{event.title}} Description {% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/eventDesc.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+
+<div class="container">
+
+  <section>
+    <div class="event-desc">
+      <div class="event-title">
+        <h1> {{event.title}}</h1>
+      </div>
+      <div class="event-details">
+        <div class="thumbnail">
+          <img src="/media/{{event.image}}" id="thumbnail" /> 
+        </div>
+        <div class="details">
+            <div class="event-date">{{event.dateEvent|date:"M m, Y"}}</div>
+            <div class="event-time">{{event.startTime|time:"G:i A"}} - {{event.endTime|time:"G:i A"}}</div>
+            <div class="event-venue"><strong>Venue:</strong> {{event.venue}}</div>
+            <div class="event-speaker"><strong>Speaker:</strong> {{event.speakerName}}</div>
+            <div class="event-cell">{{event.cell}}</div>
+            <div class="college">JC BOSE UNIVERSITY OF SCIENCE AND TECHNOLOGY</div>
+
+            <hr>
+            <div class="content">
+            <div class="event-content"> {{event.content}}</div>
+            </div>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+
+  <section>
+
+  {% if upcoming %}
+  <div class="Register">
+    <a href="{{event.googleFormLink}}" role="button" target="_blank" class="btn1">Register</a>
+  </div>
+  {% endif %}
+    
+  </section>
+
+</div>
+
+{% endblock body %}
+
+{% block script %}
+<script>
+
+  let img = document.querySelector("#thumbnail");
+  img.addEventListener("click",()=>{
+    
+    let modal = document.createElement("div");
+      modal.setAttribute("class", "modal1");
+      modal.innerHTML = `<div class="image">
+        <div class="close" onclick="this.parentElement.parentElement.remove();"> &#10006;</div>
+        <img src="${img.src}">
+    </div>`;
+    document.querySelector(".container").appendChild(modal);
+     
+  })
+
+</script>
+{% endblock script %}

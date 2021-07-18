@@ -1,0 +1,82 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Faculty Core Team{% endblock title %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/Experts.css' %}">
+<style>
+
+</style>
+{% endblock css %}
+
+{% block body %}
+
+
+    <header class="bg-secondary text-center py-5 mb-4">
+        <div class="container">
+          <h1 class="font-weight-light text-white">Meet Our Faculty Coordinators</h1>
+        </div>
+    </header>
+      
+      
+     
+      
+      
+      <div class="container" style="justify-content: center;">
+        <div class="row" style="text-align: center; justify-content: center; padding: 3%;">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow" style="height: 320px;">
+                  <img src="/static/images/img/Prof. Lakhwinder Singh.jpg" style="height: 240px; width: auto;" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Prof. Lakhwinder</h5>
+                    <div class="card-text text-black-50">President</div>
+                  </div>
+                </div>
+              </div>
+                
+        </div>
+        <div class="row" style="justify-content: center;padding: 0 3% 3% 3%;">
+          <!-- Team Member 1 -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow" style="height: 320px;">
+              <img src="/static/images/img/Dr. Sapna Gambhir.jpg" style="height: 240px;" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">Dr. Sapna Gambhir</h5>
+                <div class="card-text text-black-50">Vice President</div>
+              </div>
+            </div>
+          </div>
+          <!-- Team Member 2 -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow" style="height: 320px;">
+              <img src="/static/images/img/Dr. Parul Tomar.jpg" style="height: 240px;" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">Dr.Parul Tomar</h5>
+                <div class="card-text text-black-50">Convenor</div>
+              </div>
+            </div>
+          </div>
+        <!-- /.row -->
+      
+      </div>
+      <div class="row" style="padding:3%;" >
+        {% for faculty in iicFaculty %}
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow" style="height: 320px;">
+              <img src="/media/{{faculty.image}}" style="height: 240px;" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">{{faculty.name}}</h5>
+                <div class="card-text text-black-50">{{faculty.designation}}</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    
+    </div>
+    
+{% endblock body %}
+
+{% block script %}
+    
+{% endblock script %}
