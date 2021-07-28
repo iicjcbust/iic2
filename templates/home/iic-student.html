@@ -18,8 +18,8 @@
 
  <div style="padding: 6%;">
 
-    <h1 style="text-align: center;">IIC Secratary</h1>
-    <div class="row" style="padding: 3%;">
+    <h1 style="text-align: center; ">IIC Secratary</h1>
+    <div class="row" style="padding: 3%; justify-content: center;">
     {% for i in secratary %}
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow"style="height: 360px;" >
@@ -39,7 +39,7 @@
     {% for i in cell %}
     {% if forloop.first %}
      <h1 style="text-align: center;">{{i.role}}</h1>
-    <div class="row" style="padding: 3%;">
+    <div class="row" style="padding: 3%; justify-content: center;">
     {% endif %}
    <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-0 shadow"style="height: 360px;" >
@@ -50,13 +50,15 @@
       </div>
     </div>
   </div>
+  
   {% if forloop.last %}
-    </div>
+  </div>
+
   <hr>
   {% endif %}
     {% endfor %}
     {% endfor %}
-
+</div>
     
 {% endblock body %}
 

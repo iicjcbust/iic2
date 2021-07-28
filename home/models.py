@@ -70,21 +70,26 @@ class JoinIIC(models.Model):
 
 
 
-class Achivements(models.Model):
-    image = models.ImageField(upload_to="images/Achievement",blank=True, null=True)
-    title = models.CharField(max_length=200)
-    EventLink = models.URLField(max_length=200,blank=True, null=True)
-    undertitle = models.CharField(max_length=200)
-    body = models.TextField(blank=True, null=True)
-    createdDate = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return self.title
+# class Achivements(models.Model):
+#     image = models.ImageField(upload_to="images/Achievement",blank=True, null=True)
+#     title = models.CharField(max_length=200)
+#     EventLink = models.URLField(max_length=200,blank=True, null=True)
+#     undertitle = models.CharField(max_length=200)
+#     body = models.TextField(blank=True, null=True)
+#     createdDate = models.DateTimeField(auto_now=True)
+#     def __str__(self):
+#         return self.title
     
-    def image_tag(self):
-        if self.image:
-            return mark_safe('<img src="/media/%s" width="70" height="60" />'% (self.image))
-    image_tag.short_description = 'Achievement Image'
+#     def image_tag(self):
+#         if self.image:
+#             return mark_safe('<img src="/media/%s" width="70" height="60" />'% (self.image))
+#     image_tag.short_description = 'Achievement Image'
 
+class Achivementsnew(models.Model):
+    name = models.CharField(max_length=100)
+    link = models.URLField(max_length=300)
+    def __str__(self):
+        return self.name
 
 class Experts(models.Model):
      image = models.ImageField(upload_to="images/Expert",blank=True, null=True)

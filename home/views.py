@@ -123,7 +123,7 @@ def download(request):
     return render(request,'home/download.html', context)
 
 def achievements(request):
-    annou = Achivements.objects.filter()
+    annou =  Achivementsnew.objects.filter()
     context = {"annou":annou}
     return render(request,'home/achievements.html', context)
 

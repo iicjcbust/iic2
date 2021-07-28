@@ -41,10 +41,7 @@ class JoinIICAdmin(ImportExportModelAdmin):
     search_fields = ('first_name','last_name','email','phone','course','college','year')
     list_per_page = 15
 
-class AchivementsAdmin(ImportExportModelAdmin):
-    list_display = ('title','EventLink','undertitle','image_tag')
-    search_fields = ('title','EventLink','undertitle','body')
-    list_per_page = 15
+
 
 class ExpertsAdmin(ImportExportModelAdmin):
     list_display = ('name','designation','email','phone','role','image_tag')
@@ -64,6 +61,11 @@ class DownloadtableAdmin(ImportExportModelAdmin):
     search_fields =('name','link')
     list_per_page = 15
 
+class AchivementnewAdmin(ImportExportModelAdmin):
+    list_display = ('name', 'link')
+    search_fields = ('name', 'link')
+    list_per_page =15
+
 
 admin.site.register(Event,EventAdmin)
 admin.site.register(announcement,announcementAdmin)
@@ -71,7 +73,8 @@ admin.site.register(HomeSlider,HomeSliderAdmin)
 admin.site.register(cordinator,cordinatorAdmin)
 admin.site.register(Contact,ContactAdmin)
 admin.site.register(JoinIIC,JoinIICAdmin)
-admin.site.register(Achivements,AchivementsAdmin)
+
 admin.site.register(Experts,ExpertsAdmin)
 admin.site.register(Developer,DeveloperAdmin)
-
+admin.site.register(Downloadtable,DownloadtableAdmin)
+admin.site.register(Achivementsnew,AchivementnewAdmin)

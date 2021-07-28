@@ -15,25 +15,32 @@
     <h1 class="font-weight-light text-white">Our Achievements</h1>
   </div>
 </header>
-<div style="padding: 3%;">
   
-  <div class="row">
-    {% for event in annou %}
-  <div class="col-xl-4 col-md-6 mb-4" >
-      <div class="card border-0 shadow" >
-        <img src="/media/{{event.image}}" style="height: 420px; width:400px;" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">{{event.title}}</h5>
-          <div class="card-text text-black-50">{{event.undertitle}}</div>
-          <p>{{event.body}}</p>
-      </div>
-      </div>
-    </div>
+<div style="margin: 0 4%;">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Serial No.</th>
+        <th scope="col">Title</th>
+        <th scope="col">Link</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in annou %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{item.name}}</td>
+        <td>
+           <a type="button" class="btn btn-outline-info" style="text-decoration: none;" href="{{item.link}}">Click Here</a>
+        </td>
+      </tr>
+
+    </tbody>
     {% endfor %}
-</div>
-
-</div>
-
+  </table>
+  
+</div>  
 {% endblock body %}
 
 {% block script %}
